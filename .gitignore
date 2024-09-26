@@ -73,3 +73,6 @@ crashlytics-build.properties
 
 # Local Netlify folder
 .netlify
+
+# this is large file
+Assets/TextMesh Pro/Fonts/NotoSansJP-Black SDF.asset
