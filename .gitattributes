@@ -1,0 +1,5 @@
+Assets/TextMesh/[[:space:]]Pro/Fonts/NotoSansJP-Black/[[:space:]]SDF.asset filter=lfs diff=lfs merge=lfs -text
+.git/lfs/objects/14/b0/14b0af2c7d580d045f28e3174c4c30e630d969096f7dd2d56f53f237772ebadb filter=lfs diff=lfs merge=lfs -text
+Library/PlayerDataCache/iOS2/Data/sharedassets0.assets.resS filter=lfs diff=lfs merge=lfs -text
+* text=auto
+Assets/TextMesh[[:space:]]Pro/Fonts/NotoSansJP-Black[[:space:]]SDF.asset filter=lfs diff=lfs merge=lfs -text

@@ -1,0 +1,10 @@
+[build]
+  functions = "functions"
+  command = "npm run build"  # ここはプロジェクトのビルドコマンドに置き換えてください
+  publish = "public"  # ここはビルドされた静的ファイルがあるディレクトリに置き換えてください
+
+[build.environment]
+  NODE_VERSION = "14"
+
+[[plugins]]
+  package = "@netlify/plugin-functions-install-core"
