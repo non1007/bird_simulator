@@ -1,4 +1,0 @@
-framework module LineSDKObjC {
-  header "LineSDKObjC-Swift.h"
-  requires objc
-}
