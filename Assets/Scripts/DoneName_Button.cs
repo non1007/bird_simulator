@@ -27,7 +27,7 @@ public class DoneName_Button : MonoBehaviour
     { 
         // GameSceneをロード
         // PlayerPrefs.DeleteAll();
-        getNameObject.InputText();
+        //getNameObject.InputText();
         SaveStartTime();
         StatusReset();
         PlayerPrefs.SetInt("SceneNo", HOME);
