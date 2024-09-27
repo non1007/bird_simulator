@@ -76,3 +76,6 @@ crashlytics-build.properties
 
 # this is large file
 Assets/TextMesh Pro/Fonts/NotoSansJP-Black SDF.asset
+HungerData.csv
+ButtonData.csv
+CleanData.csv
