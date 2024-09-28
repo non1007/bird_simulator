@@ -1,4 +1,4 @@
-This is a bird simulation system created using Unity(2022.3.29f1)
+#This is a bird simulation system created using Unity(2022.3.29f1)
 
 Please download Assets in below link.
 
@@ -20,3 +20,5 @@ https://fonts.google.com/noto/specimen/Noto+Sans+JP
 
 ↓I got LINE SDK.
 https://github.com/line/line-sdk-unity/releases
+
+Line Accsess token has already changed.
