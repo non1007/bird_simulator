@@ -1,4 +1,4 @@
-This is a bird simulation system created using Unity.
+This is a bird simulation system created using Unity(2022.3.29f1)
 
 Please download Assets in below link.
 
