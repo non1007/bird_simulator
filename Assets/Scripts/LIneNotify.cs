@@ -5,6 +5,12 @@ using System.Net.Http;
 using System.Net.Http.Headers;
 using Newtonsoft.Json;
 using System.Text;
+using System.IO;
+
+public class ConfigData
+{
+    public string LINE_CHANNEL_ACCESS_TOKEN { get; set; }
+}
 
 public class LineNotify : MonoBehaviour
 {
@@ -14,25 +20,21 @@ public class LineNotify : MonoBehaviour
     private string birdname;
 
     //環境変数にしたい！！
-    private string channelAccessToken = "a1SYuvzTv/f2sXPDp0d6fsJS2lvQHx7O0US7VVxFjL4OwdpPTDeuVWTEkcMOgm64uLAQALNUKCpsrOB0EUJV0+99YYfjuH5fxOnuBnJ0+vvgB3+V46eOskDzPb4n0dB8Zlg/WZlPjR8EOMuNvdekjAdB04t89/1O/w1cDnyilFU=";
+    //private string channelAccessToken = "???";
+    private string channelAccessToken;
+    private string configPath;
 
     // 実行すると最初に呼ばれる処理
     void Start()
     {
-        //PublishMessage("インコが寂しがっています");
-        userId = PlayerPrefs.GetString("UserId");
-        // accessToken = PlayerPrefs.GetString("AccessToken");
-
-        if(string.IsNullOrEmpty(userId))
+        if (!gameData.IsNotify)
         {
-            Debug.LogError("userIDが設定されていません。");
+            this.enabled = false;
         }
-
-        birdname = PlayerPrefs.GetString("Name", "ななし");
-
-        Debug.Log($"UserId: {userId}, Name: {birdname}");
-
-        // SendMessageToUser(userId, "こんにちは、これはテストメッセージです。");
+        else
+        {
+            SettingUserID();
+        }
     }
 
     // 各フレーム（1秒間に24枚）ごとに処理
@@ -51,6 +53,35 @@ public class LineNotify : MonoBehaviour
             SendMessageToUser(userId, $"{birdname}がケージの汚れを嫌がっています");
             gameData.firsttime_clean = false;
         }
+    }
+
+    //UserIDの設定
+    void SettingUserID()
+    {
+        string configPath = Application.dataPath + "/config.json";
+        if (File.Exists(configPath))
+        {
+            var configText = File.ReadAllText(configPath);
+            ConfigData config = JsonConvert.DeserializeObject<ConfigData>(configText);
+            channelAccessToken = config.LINE_CHANNEL_ACCESS_TOKEN;
+        }
+        else
+        {
+            Debug.LogError("設定ファイルが見つかりません。");
+        }
+
+        //PublishMessage("インコが寂しがっています");
+        userId = PlayerPrefs.GetString("UserId");
+        // accessToken = PlayerPrefs.GetString("AccessToken");
+
+        if (string.IsNullOrEmpty(userId))
+        {
+            Debug.LogError("userIDが設定されていません。");
+        }
+
+        birdname = PlayerPrefs.GetString("Name", "ななし");
+
+        Debug.Log($"UserId: {userId}, Name: {birdname}");
     }
 
     // // LINEに通知する処理
