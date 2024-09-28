@@ -20,8 +20,21 @@ public class Output_File : MonoBehaviour
 
     private bool isFirstOpen = true;
     public bool isNight;
+    public GameData gameData;
 
     void Start()
+    {
+        if (!gameData.IsOutput)
+        {
+            this.enabled = false;
+        }
+        else
+        {
+            SettingOutput();
+        }
+    }
+
+    void SettingOutput()
     {
         isNight = false;
         SetFilePaths();
