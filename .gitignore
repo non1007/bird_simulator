@@ -75,8 +75,18 @@ crashlytics-build.properties
 .netlify
 
 # this is large file
-Assets
+Assets/TextMesh Pro
+Assets/Free Food Pack
+Assets/Furniture_ges1
+Assets/JSBirds
+Assets/LineSDK
+Assets/Music
+Assets/PolyWorkshop
+Assets/Plugins
+Assets/Resources
+Assets/Scenes/clean
+Assets/Scenes/home
+
 HungerData.csv
 ButtonData.csv
 CleanData.csv
-
